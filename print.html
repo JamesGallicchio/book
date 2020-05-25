@@ -1,0 +1,649 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>SML Help</title>
+        
+        <meta name="robots" content="noindex" />
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A resource for learning SML">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Welcome!</a></li><li class="chapter-item expanded "><a href="start/index.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="start/install.html"><strong aria-hidden="true">1.1.</strong> Install &amp; run SML</a></li><li class="chapter-item expanded "><a href="start/syntax.html"><strong aria-hidden="true">1.2.</strong> Syntax Cheatsheet</a></li><li class="chapter-item expanded "><a href="start/common.html"><strong aria-hidden="true">1.3.</strong> Common Tasks</a></li></ol></li><li class="chapter-item expanded "><a href="types/index.html"><strong aria-hidden="true">2.</strong> Types &amp; Signatures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="types/type.html"><strong aria-hidden="true">2.1.</strong> Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="types/bool.html"><strong aria-hidden="true">2.1.1.</strong> bool</a></li><li class="chapter-item expanded "><a href="types/int.html"><strong aria-hidden="true">2.1.2.</strong> int</a></li><li class="chapter-item expanded "><a href="types/real.html"><strong aria-hidden="true">2.1.3.</strong> real</a></li><li class="chapter-item expanded "><a href="types/string.html"><strong aria-hidden="true">2.1.4.</strong> string</a></li><li class="chapter-item expanded "><a href="types/function.html"><strong aria-hidden="true">2.1.5.</strong> function types</a></li></ol></li><li class="chapter-item expanded "><a href="types/sig.html"><strong aria-hidden="true">2.2.</strong> Signatures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="types/list.html"><strong aria-hidden="true">2.2.1.</strong> list</a></li><li class="chapter-item expanded "><a href="types/dict.html"><strong aria-hidden="true">2.2.2.</strong> dictionaries</a></li><li class="chapter-item expanded "><a href="types/regex.html"><strong aria-hidden="true">2.2.3.</strong> regular expressions</a></li><li class="chapter-item expanded "><a href="seq/seq.html"><strong aria-hidden="true">2.2.4.</strong> sequences</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="debugging/index.html"><strong aria-hidden="true">3.</strong> Debugging</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="debugging/errors.html"><strong aria-hidden="true">3.1.</strong> Common Errors</a></li><li class="chapter-item expanded "><a href="debugging/hints.html"><strong aria-hidden="true">3.2.</strong> Debugging Hints</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/index.html"><strong aria-hidden="true">4.</strong> Concepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/basic.html"><strong aria-hidden="true">4.1.</strong> Basics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/eval.html"><strong aria-hidden="true">4.1.1.</strong> Evaluation</a></li><li class="chapter-item expanded "><a href="concepts/eeq.html"><strong aria-hidden="true">4.1.2.</strong> Extensional Equivalence</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/recind.html"><strong aria-hidden="true">4.2.</strong> Recursion and Induction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/tail.html"><strong aria-hidden="true">4.2.1.</strong> Tail Recursion</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/hofs.html"><strong aria-hidden="true">4.3.</strong> Higher Order Functions</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/curry.html"><strong aria-hidden="true">4.3.1.</strong> Currying and Partial Evaluation</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/control.html"><strong aria-hidden="true">4.4.</strong> Control Flow</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/cps.html"><strong aria-hidden="true">4.4.1.</strong> Basic CPS</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/mods.html"><strong aria-hidden="true">4.5.</strong> Modules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/ascription.html"><strong aria-hidden="true">4.5.1.</strong> Ascription</a></li></ol></li><li class="chapter-item expanded "><a href="concepts/apps.html"><strong aria-hidden="true">4.6.</strong> Applications</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="concepts/costgraphs.html"><strong aria-hidden="true">4.6.1.</strong> Cost graphs</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="examples/index.html"><strong aria-hidden="true">5.</strong> Examples</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="examples/basics.html"><strong aria-hidden="true">5.1.</strong> Basics</a></li><li class="chapter-item expanded "><a href="examples/recursion.html"><strong aria-hidden="true">5.2.</strong> Recursion &amp; Induction</a></li></ol></li><li class="chapter-item expanded "><a href="about.html">About</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">SML Help</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#welcome" id="welcome">Welcome!</a></h1>
+<p>Welcome to <code>smlhelp.github.io</code>! The goal of this site is to provide a convenient
+resource for learning functional programming, particularly in the language of
+Standard ML. You'll find various guides and references about the SML type system
+&amp; functional programming concepts, as well as some worked examples and tutorials.
+Click on the navigation links on the left to get started!</p>
+<h1><a class="header" href="#getting-started" id="getting-started">Getting Started</a></h1>
+<h1><a class="header" href="#installing-smlnj" id="installing-smlnj">Installing SML/NJ</a></h1>
+<h2><a class="header" href="#installing-smlnj-on-afs" id="installing-smlnj-on-afs">Installing SML/NJ on AFS</a></h2>
+<p>To set up your SML/NJ environment on the Andrew File System (AFS), first you will need to log in to AFS.</p>
+<p>You can do this by executing the command
+<code>ssh &lt;andrew_id&gt;@unix.andrew.cmu.edu</code></p>
+<p>You can do this from a terminal very straightforwardly on a Mac. If you are on a Windows machine, you may need to use an application such as Visual Studio Code or MobaXTerm to access a terminal.</p>
+<p>Once you are in AFS, execute the command 
+<code>/afs/andrew/course/15/150/bin/setup-path</code></p>
+<p>Once the script has finished running, type in the command that it tells you to. It should look something like
+<code>. '/afs/andrew.cmu.edu/usrc/&lt;andrew_id&gt;/.bashrc</code></p>
+<p><strong>IMPORTANT:</strong> <em>Do not forget the . at the beginning!</em> This will cause the script to not work. </p>
+<p>After finishing this, you should be able to type in <code>smlnj</code> from the command line and access the SML/NJ REPL.</p>
+<h1><a class="header" href="#sml-syntax-cheatsheet" id="sml-syntax-cheatsheet">SML Syntax Cheatsheet</a></h1>
+<h1><a class="header" href="#common-tasks-in-sml" id="common-tasks-in-sml">Common Tasks in SML</a></h1>
+<h1><a class="header" href="#types--singatures" id="types--singatures">Types &amp; Singatures</a></h1>
+<h1><a class="header" href="#types" id="types">Types</a></h1>
+<p>Types are a very fundamental concept to Standard ML, and indeed, to functional programming in general. Most programming languages have some notion of type, with <code>int</code>, <code>float</code>, and data structures such as <code>array</code> being common examples, however they tend to be weakly enforced, only being verified at runtime. In SML, we employ a system of <em>strong typing</em> consisting of stricter typing rules, which allows us to catch errors earlier in program execution, at compile time.</p>
+<h2><a class="header" href="#type-safety" id="type-safety">Type Safety</a></h2>
+<p>Oftentimes, data is separated into types so that we can differentiate different kinds of data from each other. For instance, it makes no sense to add a <code>string</code> and an <code>int</code> - though certain programming languages will try to make sense of it. It is often the case that, when different data types are haphazardly combined, it is the result of an error - the philosophy behind SML's type system is disallow such intermingling. In SML, every expression and every function has a specified type, which governs what interactions are possible with other expressions. </p>
+<p>Consider the following code fragment in Python:</p>
+<pre><code class="language-python">def foo(x):
+    if x == 2:
+        return 1  
+    elif x == &quot;bar&quot;:
+        return True
+    return None
+</code></pre>
+<p>What is the type of its output? The answer is &quot;it depends&quot;, as it is dependent on the value of <code>x</code> that is passed in. We could give <code>foo</code> any type of argument, and we can see that in the cases that we pass in <code>2</code> or <code>&quot;bar&quot;</code>, we could obtain an <code>int</code> or a <code>bool</code> as output, or even a <code>None</code> in any other case.</p>
+<p>Then consider - is <code>foo(y) + 3</code> safe? Again, this is dependent on what the value of <code>y</code> is, but we see the same answer of &quot;it depends&quot;. In some cases, depending on what the program has done up to this point, it may be safe - this is in the case where <code>y</code> is <code>2</code>, in which case <code>foo(y) + 3</code> would just be <code>4</code>. But if it wasn't, we may end up trying to add <code>True</code> or <code>None</code> to <code>2</code>, which clearly doesn't make sense. While a contrived piece of code, type errors such as this spring up in code all the time. Whoever wrote this program likely didn't intend to try and add a non-int to <code>2</code>, but it can be tricky to reason about whether or not such an outcome is truly possible.</p>
+<p>In SML, our philosophy will be to make such uncertanties impossible. We impose a certain degree of <em>determinism</em> to our programs, such that the types of each expression and each step of evaluation throughout our program have a definite type that is known to the program. If a program tries to execute some computation that would use the wrong type somewhere, or otherwise cause types to not match up, then we would call the program <em>ill-typed</em>, and it would be rejected before even evaluating. This period of verifying types is called <em>type-checking</em>, and occurs at <em>compile-time</em>, which stands opposed to <em>run-time</em>. Compile-time checking happens before the program is actually run, before any actual evaluation, and only upon passing the type-checking phase will the program actually execute.</p>
+<h2><a class="header" href="#type-checking" id="type-checking">Type-Checking</a></h2>
+<p>The most fundamental rule for type-checking is during function application, or the act of applying a function to its arguments. This is elaborated on further in the chapter on functions.</p>
+<blockquote>
+<p><strong>[APP]</strong> An expression <code>e1 e2</code> has type <code>t2</code> if and only if <code>e1 : t1 -&gt; t2</code> and <code>e2 : t1</code>.</p>
+</blockquote>
+<p>More specifically, for a function <code>f : t1 -&gt; t2</code>, if <code>x : t3</code> where <code>t3</code> is not the same type as <code>t1</code>, then the expression <code>f x</code> is ill-typed. In words, giving a function an argument that is not of the corresponding type to its input type is ill-typed, and will cause a program to reject at compile-time. We call an expression that does not encounter a type error <em>well-typed</em>.</p>
+<p>The majority of type errors will occur as a consequence of this rule. Since functions have definite return types, it is very simple to check if a program type-checks - simply evaluate the <em>types</em> of the expressions and see if a type error is reached. The type-checking phase is agnostic to the specific values of expressions - when given an expression such as <code>1 + 2</code>, it simply sees two expressions of type <code>int</code> being passed into a function of type <code>int * int -&gt; int</code>, and thus knows that the result must be of type <code>int</code>, and that the entire expression is well-typed.</p>
+<p>Because of this, the well-typedness of expressions is independent of any run-time errors that may occur. For instance, the expression <code>1 div 0</code> clearly cannot give back a value of type <code>int</code>, as division by 0 is undefined. Instead, during execution, <code>1 div 0</code> will raise the exception <code>Div</code>, and try to terminate execution of the program. From the perspective of type-checking, however, it has no way of knowing that the second argument of <code>div</code> is <code>0</code>, since it only looks at the types. As such, even though it will not return a value, the expression <code>1 div 0</code> is well-typed, and has type <code>int</code>.</p>
+<h2><a class="header" href="#conclusion" id="conclusion">Conclusion</a></h2>
+<p>SML's type system is a very powerful tool for ensuring the correctness of programs. The philosophy behind Standard ML is to push errors to compile-time, before a program is even run - in doing this, we can ensure that unexpected errors do not arise during run-time, long after we've already concluded that our code is correct. With strong typing and type-checking, we can guarantee that our code will be free of type errors, reducing the possibility of making mistakes. Later in this section, we will discuss some concrete types.</p>
+<h1><a class="header" href="#bool" id="bool">Bool</a></h1>
+<p><code>bool</code> is the SML type of booleans. The <code>bool</code> type supports the usual constructs of boolean logic and &quot;conditionals&quot; (<code>if</code> expressions). <code>bool</code> is also the type produced when evaluating (in)equality between values of (suitable) types. </p>
+<h2><a class="header" href="#values" id="values">Values</a></h2>
+<p>There are exactly two values of type <code>bool</code>, <code>true</code> and <code>false</code>.</p>
+<pre><code class="language-sml">datatype bool = true | false
+</code></pre>
+<p>In addition to the constructs generally available in pattern matching (e.g. wildcards and identifier binding), booleans can be pattern-matched against using the constructors <code>true</code> and <code>false</code>.</p>
+<pre><code class="language-sml">fun firstOrSecond ((x : int,y : int), true):int = x
+  | firstOrSecond ((x,y), false) = y
+
+val 2 = firstOrSecond((3,2),false)
+</code></pre>
+<p><code>bool</code> is pretty-printed by the <code>smlnj</code> REPL, so the actual values will display. This is demonstrated by the following <code>smlnj</code> REPL snippet.</p>
+<pre><code class="language-sml">- val b = true orelse false;
+val b = true : bool
+</code></pre>
+<h2><a class="header" href="#production" id="production">Production</a></h2>
+<p>Some common functions which produce booleans:</p>
+<pre><code class="language-sml">(op =)  : ''a * ''a -&gt; bool
+(op &lt;&gt;) : ''a * ''a -&gt; bool  (* Inequality *)
+
+(* All of the following are overloaded and also work on values of type real *)
+(op &lt;)  : int * int -&gt; bool
+(op &gt;)  : int * int -&gt; bool
+(op &lt;=) : int * int -&gt; bool
+(op &gt;=) : int * int -&gt; bool
+</code></pre>
+<h2><a class="header" href="#elimination" id="elimination">Elimination</a></h2>
+<p>The principal use of booleans is for evaluating one of two possible expressions, conditional on a value of type <code>bool</code>:</p>
+<pre><code class="language-sml">(* Evaluates to 5 *)
+val res1 = if true then 5 else 2
+
+(* Evaluates to 7 *)
+val res2 = if false then 3+3 else 7
+</code></pre>
+<p>Note that the expression between <code>then</code> and <code>else</code> (the &quot;then branch&quot;) has the same type as the expression after the <code>else</code> (the &quot;else branch&quot;). This is necessary: the SML typechecker does not evaluate expressions, and so does not &quot;know&quot; that, for instance, <code>if false then e1 else e2</code> will always reduce to <code>e2</code>. As far as the typechecker knows, <code>if false then e1 else e2</code> could reduce to <code>e1</code>. So, in order for the typechecker to be able to assign a type to the expression <code>if false then e1 else e2</code>, it must be the case that <code>e1</code> and <code>e2</code> have the same type. More formally, </p>
+<blockquote>
+<p>[If-Then]  An expression <code>if b then e1 else e2</code> is well-typed (with type <code>t</code>) 
+if and only if 
+<code>b : bool</code> and <code>e1 : t</code> and <code>e2 : t</code>.</p>
+</blockquote>
+<p>It is worth noting that <code>if b then e1 else e2</code> is equivalent to the following expression, written using SML's <code>case</code> syntax.</p>
+<pre><code class="language-sml">    case b of
+      true =&gt; e1
+    | false =&gt; e2
+</code></pre>
+<p>Which is also equivalent to</p>
+<pre><code class="language-sml">    (fn true =&gt; e1 | false =&gt; e2) b
+</code></pre>
+<p><strong>NOTE:</strong> It's important to note that, in the evaluation of the expression <code>if true then e1 else e2</code>, the expression <code>e2</code> is <em>never</em> evaluated (and, analogously, <code>e1</code> never is evaluated in <code>if false then e1 else e2</code>). This is most evident when we look at the third syntax (with the lambda function): SML does not evaluate the body of a function <em>until the function is called</em>. So when <code>(fn true =&gt; e1 | false =&gt; e2)</code> gets applied to, say, <code>true</code>, then the evaluation steps immediately to <code>e1</code>, without ever evaluating <code>e2</code>. This point is explored more in a question below.</p>
+<h2><a class="header" href="#combination" id="combination">Combination</a></h2>
+<p><code>bool</code> is an equality type, and may therefore be compared with <code>=</code>, producing another <code>bool</code>.</p>
+<pre><code class="language-sml">val true = (true = true)
+val false = (true = false)
+val false = (false &lt;&gt; false)
+</code></pre>
+<p><code>bool</code> also comes equipped with the usual boolean operators,</p>
+<pre><code class="language-sml">val true = true andalso true   (* andalso keyword, logical and *)
+val true = false orelse true   (* orelse keyword, logical or *)
+val false = not true           (* not:bool -&gt; bool, logical negation *)
+</code></pre>
+<p>An important note about <code>andalso</code> and <code>orelse</code>: the evaluation of <code>b1 andalso b2</code> has a behavior known as <em>short-circuiting</em>:<sup>[1]</sup> when evaluating this expression, SML will first attempt to evaluate <code>b1</code>. If <code>b1</code> raises an exception or loops behavior, then that will be the behavior of <code>b1 andalso b2</code> as a whole. If <code>b1</code> reduces down to the value <code>true</code>, then SML will then attempt to evaluate <code>b2</code>. However, if <code>b1</code> evaluates to the value <code>false</code>, then SML will <em>not evaluate <code>b2</code></em>. This is exhibited in the following code snippet.</p>
+<pre><code class="language-sml">(* loops forever on any input *)
+fun loop (x:int):bool = loop x
+
+(* Evaluates to the value false, and doesn't loop *)
+val false = false andalso (loop 3)
+</code></pre>
+<h2><a class="header" href="#from-the-structure" id="from-the-structure">From the Structure</a></h2>
+<p>The structure <code>Bool</code> is bound as part of the SML Basis. In addition to what's already been mentioned, it includes the utility function</p>
+<pre><code class="language-sml">	Bool.toString : bool -&gt; string
+</code></pre>
+<p>This is useful (for instance) for print-debugging the value of a <code>bool</code>-valued variable.</p>
+<h2><a class="header" href="#questions-to-consider" id="questions-to-consider">Questions to Consider</a></h2>
+<ol>
+<li>Why are the following expressions <em>not</em> equivalent?</li>
+</ol>
+<pre><code class="language-sml">    (if b then e1 else e2)
+
+    (fn (x,y) =&gt; if b then x else y) (e1,e2)
+</code></pre>
+<ol start="2">
+<li>Why are the following expressions <em>not</em> equivalent?</li>
+</ol>
+<pre><code class="language-sml">    b1 andalso b2
+
+    (fn (v1,v2) =&gt; v1 andalso v2) (b1,b2)
+</code></pre>
+<h4><a class="header" href="#footnotes" id="footnotes">Footnotes</a></h4>
+<p>[1]: This is why <code>andalso</code> and <code>orelse</code> are designated as <em>keywords</em> above: they are <em>not</em> infixed functions of type <code>bool*bool-&gt;bool</code>. Functions cannot exhibit this kind of &quot;shortcircuiting&quot; (evaluating one of their arguments and then deciding whether to evaluate the other): the integer addition <code>(op +) : int*int -&gt; int</code> must have both of its arguments fully evaluated before proceeding to add them. The keywords <code>andalso</code> and <code>orelse</code> must be built-in to the SML evaluator to achieve shortcircuiting.</p>
+<h1><a class="header" href="#int" id="int">Int</a></h1>
+<p><code>int</code> is the SML type of integers.</p>
+<h2><a class="header" href="#values-1" id="values-1">Values</a></h2>
+<p>The underlying representation of integers can be likened to the following:</p>
+<pre><code class="language-sml">datatype int = ... | ~2 | ~1 | 0 | 1 | 2 | ...
+</code></pre>
+<p>This signifies that the type <code>int</code> is inhabited by infinitely many values, all corresponding to whole numbers. In particular, every integer forms its own <em>constant constructor</em> for the <code>int</code> type, meaning that they each individually can be pattern matched upon. Note that the use of <code>~</code> above denotes negativity. Additionally, <code>~</code> is a valid function of type <code>int -&gt; int</code> that negates a number.</p>
+<p>While in practice, computers can only represent a finite number of integers, for the purposes of this class we will generally assume the integers to be unbounded. This means that we can do induction on SML integers in exactly the same way as we would do induction on the natural numbers, and that we do not have to worry about the consequences of edge case behavior. This allows us to ignore pedantic implementation details and explore mathematically interesting properties of programs.</p>
+<h2><a class="header" href="#production-1" id="production-1">Production</a></h2>
+<p>Integers have all the familiar arithmetic operations available to them. Note that some of these functions are also overloaded to work with <code>real</code> types - this is further discussed in the Real page.</p>
+<pre><code class="language-sml">(op +)   : int * int -&gt; int
+(op -)   : int * int -&gt; int
+(op *)   : int * int -&gt; int
+(op div) : int * int -&gt; int
+(op mod) : int * int -&gt; int
+</code></pre>
+<p>All of these functions are <em>infixed</em>, so instead of being applied as <code>+(2, 3)</code>, we write <code>2 + 3</code>. Additionally, <code>div</code> and <code>mod</code> are not defined when the second argument is 0, and will raise a <code>Div</code> exception.</p>
+<h2><a class="header" href="#combination-1" id="combination-1">Combination</a></h2>
+<p>Integers are also eligible for comparison, including equality and inequality. (In other words, integers are an <em>equality type</em>).</p>
+<pre><code class="language-sml">(op =)  : int * int -&gt; bool
+(op &lt;&gt;) : int * int -&gt; bool (* Inequality *)
+
+(op &lt;)  : int * int -&gt; bool
+(op &gt;)  : int * int -&gt; bool
+(op &lt;=) : int * int -&gt; bool
+(op &gt;=) : int * int -&gt; bool
+</code></pre>
+<h2><a class="header" href="#from-the-structure-1" id="from-the-structure-1">From the Structure</a></h2>
+<p>The structure <code>Int</code> is bound as part of the SML Basis. It includes helpful functions such as</p>
+<pre><code class="language-sml">Int.toString : int -&gt; string
+Int.compare  : int * int -&gt; order
+Int.min      : int * int -&gt; int
+Int.max      : int * int -&gt; int
+</code></pre>
+<p>where <code>Int.toString</code> is the function that returns the string representation of a given integer, and <code>Int.compare</code> has return type <code>order</code>, which is inhabited only by values <code>LESS</code>, <code>EQUAL</code>, and <code>GREATER</code>. <code>Int.compare (x, y)</code> returns <code>LESS</code> only if x &lt; y, <code>EQUAL</code> if x = y, and <code>GREATER</code> if <code>x &gt; y</code>. Additionally, <code>Int.min</code> and <code>Int.max</code> are just the corresponding min and max functions for integers.</p>
+<h1><a class="header" href="#real" id="real">Real</a></h1>
+<p><code>real</code> is the SML type of real or floating-point numbers. As in other programming languages, reals in SML are restricted to finite machine representations, which means that they cannot represent every real number with perfect precision. For this reason, generally in this course we will prefer the use of <code>int</code>s when performing numeric operations.</p>
+<h2><a class="header" href="#values-2" id="values-2">Values</a></h2>
+<p>A real number is a sequence of numbers, followed by a decimal point, followed by another sequence of numbers. This includes examples such as <code>15.150</code>, <code>1.0</code>, and <code>3.14159</code>. Reals are noteworthy in that they are not <em>equality types</em>, which means that they cannot be compared for equality with the <code>=</code> operator. In addition, they cannot be pattern matched upon. This means that when designing programs with specific behavior based on equality with a specific real number, they should instead be written to operate within some <em>degree of precision</em> of the real number in question. For instance:</p>
+<pre><code class="language-sml">val equalThreshold = 0.000001
+fun isZero (x : real) : bool = Real.abs x &lt; equalThreshold
+</code></pre>
+<p>This function simply prespecifies a (small) range, within which a number can be considered to be &quot;equal&quot; to 0. It uses the function <code>Real.abs</code> to check if the real number in question is within that threshold of zero, in either direction. In this way, we can approximate some test for equality, up to some degree of acceptable precision.</p>
+<h2><a class="header" href="#production-2" id="production-2">Production</a></h2>
+<p>Real numbers similarly have access to some of the basic arithmetic operations as integers. In particular, they have:</p>
+<pre><code class="language-sml">(op +) : real * real -&gt; real
+(op -) : real * real -&gt; real
+(op *) : real * real -&gt; real
+(op /) : real * real -&gt; real
+</code></pre>
+<p>Note that all but the last operator are also defined to work on <code>int</code> types. This may seem to violate type safety, however this is just an example of those functions being <em>overloaded</em>. There are two &quot;copies&quot; of, for instance, the <code>+</code> operator - one that has type <code>int * int -&gt; int</code> and one with type <code>real * real -&gt; real</code>. Notably, however, it only works on either both ints or both reals - it is not defined on both. As such, SML can infer from its arguments whether it should use the <code>int</code> or the <code>real</code> variant, and similarly for <code>-</code> and <code>*</code>. <code>div</code>, however, is only defined for integers - <code>/</code> is the counterpart for division on the real numbers.</p>
+<h2><a class="header" href="#combination-2" id="combination-2">Combination</a></h2>
+<p>While not defined for equality, reals can still be compared to one another.</p>
+<pre><code class="language-sml">(op &lt;)  : real * real -&gt; bool
+(op &gt;)  : real * real -&gt; bool
+(op &lt;=) : real * real -&gt; bool
+(op &gt;=) : real * real -&gt; bool
+</code></pre>
+<p>These operations are similarly overloaded, and will also work on integers.</p>
+<h2><a class="header" href="#from-the-structure-2" id="from-the-structure-2">From the Structure</a></h2>
+<p>The structure <code>Real</code> is bound as part of the SML Basis. It has access to a few useful functions, including:</p>
+<pre><code class="language-sml">Real.toString : real -&gt; string
+Real.compare  : real * real -&gt; order
+Real.abs      : real -&gt; real
+</code></pre>
+<p>where <code>Real.toString</code> is the standard function that transforms a real number into its corresponding string representation, <code>Real.compare</code> on two reals returns <code>LESS</code>, <code>EQUAL</code>, or <code>GREATER</code> depending on their relative magnitudes, and <code>Real.abs</code> returns the absolute value of the real number in question.</p>
+<h1><a class="header" href="#string" id="string">String</a></h1>
+<p><code>string</code> is the SML type of ordered collections of characters. </p>
+<h2><a class="header" href="#values-3" id="values-3">Values</a></h2>
+<p>Any valid string literal is a value of type <code>string</code>. This means that examples such as <code>&quot;functional&quot;</code>, <code>&quot;15-150&quot;</code>, and <code>&quot;\n&quot;</code> are all valid strings, forming their own constant constructors that can thus be pattern matched upon.</p>
+<pre><code class="language-sml">fun courseToNum (&quot;15-150&quot; : string) : int = 15150
+  | courseToNum (&quot;15-151&quot; : string) : int = 15151
+  | courseToNum (&quot;15-122&quot; : string) : int = 15122
+</code></pre>
+<h2><a class="header" href="#production-3" id="production-3">Production</a></h2>
+<p>Numerous types have their own <code>toString</code> functions that allow them to be easily converted to their string representations, including:</p>
+<pre><code class="language-sml">Bool.toString : bool -&gt; string
+Int.toString  : int -&gt; string
+Real.toString : real -&gt; string
+</code></pre>
+<h2><a class="header" href="#combination-3" id="combination-3">Combination</a></h2>
+<p>Strings can be combined by means of the <code>^</code> operator, or &quot;concatenation&quot;. <code>^</code> takes two strings and joins them together, without creating any spaces. As such, if neither string contains spaces, then the resulting string will be attached directly. Specifically, the result of an operation such as <code>&quot;functional&quot; ^ &quot;programming&quot;</code> will be <code>&quot;functionalprogramming&quot;</code>.</p>
+<pre><code class="language-sml">(op ^) : string * string -&gt; string
+</code></pre>
+<h2><a class="header" href="#from-the-structure-3" id="from-the-structure-3">From the Structure</a></h2>
+<p>The structure <code>String</code> is bound as part of the SML Basis. It contains several useful functions for dealing with strings, such as:</p>
+<pre><code class="language-sml">String.explode : string -&gt; char list
+String.implode : char list -&gt; string
+</code></pre>
+<p><code>String.explode</code> takes a string and converts it to a list of its constituent characters, in order as they appear in the string. <code>String.implode</code> is the opposite, taking in a list of characters and joining them to form a string. This means that:</p>
+<pre><code class="language-sml">val [#&quot;1&quot;, #&quot;5&quot;, #&quot;1&quot;, #&quot;5&quot;, #&quot;0&quot;] = String.explode &quot;15150&quot;
+val &quot;15150&quot; = String.implode [#&quot;1&quot;, #&quot;5&quot;, #&quot;1&quot;, #&quot;5&quot;, #&quot;0&quot;]
+</code></pre>
+<p>Note that the use of <code>#</code> is to denote that each element of the list is a <code>char</code> type, as opposed to a <code>string</code> of length 1.</p>
+<h1><a class="header" href="#functions" id="functions">Functions</a></h1>
+<p>Functions are a familiar concept in programming. In most languages, functions seem to capture a notion of a list of instructions to be carried out, with each invocation of the function resulting in another round of executing its instructions. In this class, however, we will take another perspective on functions - one that identifies the function more with the values that it outputs than the instructions that it executes.</p>
+<h2><a class="header" href="#what-is-a-function" id="what-is-a-function">What is a Function?</a></h2>
+<p>What is a function? To most seasoned programmers, the definition given in the above section seems to be the most obvious. A function (or subroutine) is simply identified with the instructions that it executes, which have some <em>effect</em> on the state of the program as a whole, such as incrementing some variable, or setting some flag. </p>
+<p>Before most programmers were programmers, however, they had a different notion of a function. To a mathematician, a function is something else entirely. Instead of being an algorithmic sequence of instructions, a function is simply an entity that maps inputs to outputs - for example, (f(x) = x + 1). Something rather notable is that mathematical functions are <em>pure</em> - given the same input, they always return the same output. So while it is a valid question in programming to ask how a function's behavior changes over time, this is a nonsensical question in terms of mathematical functions.</p>
+<p>To be more concrete, let us consider a Python program.</p>
+<pre><code class="language-python">x = 0
+def f(y):
+    x += 1
+    return x + y
+</code></pre>
+<p>This program instantiates a variable <code>x</code> outside the scope of the function <code>f</code> (which takes a single argument <code>y</code>), and the behavior of <code>f</code> is to increment the value of <code>x</code>, then return the sum of <code>x</code> and <code>y</code>. What we would find is that the first time that we run <code>f(0)</code>, for instance, we obtain <code>1</code>. The second time that we run <code>f(0)</code>, it will return <code>2</code>, and so on and so forth. We cannot even say that <code>f(0) = f(0)</code>! The output behavior of this function changes every time that it is run. This makes it difficult to reason about the function - in order to do so, we must know the number of times that it has been called before, at a given step in the program. While this is a fairly tame example, this problem only compounds with more complicated functions.</p>
+<p>Clearly, this function is <em>impure</em>. Can we do better?</p>
+<h2><a class="header" href="#function-types-and-function-application" id="function-types-and-function-application">Function Types and Function Application</a></h2>
+<p>So far we have seen basic types such as <code>int</code> and <code>string</code>, among others. Functions allow us to compose types in new ways.</p>
+<p>In SML, we denote the type of a function that has input type <code>t1</code> and output type <code>t2</code> (for some arbitrary, fixed <code>t1</code> and <code>t2</code>) to be <code>t1 -&gt; t2</code>. By SML's strict typing rules, functions of type <code>t1 -&gt; t2</code> can <em>only</em> take in inputs of type <code>t1</code> and return outputs of type <code>t2</code>, for any types <code>t1</code> and <code>t2</code>. Additionally, we write <code>e1 e2</code> for the expression consisting of the function <code>e1</code> being given as input the expression <code>e2</code> (so we may write the mathematical function (f(x)) instead as <code>f x</code>).</p>
+<blockquote>
+<p><strong>[APP]</strong> An expression <code>e1 e2</code> has type <code>t2</code> if and only if <code>e1 : t1 -&gt; t2</code> and <code>e2 : t1</code>.</p>
+</blockquote>
+<p>We call the above rule [APP] since it concerns the types of expressions during <em>function application</em>, or the process of applying a function to an argument. </p>
+<p>Note that a function must always have type <code>t1 -&gt; t2</code> (for some types <code>t1</code> and <code>t2</code>, though <code>t1</code> and <code>t2</code> may be complicated types in their own right). As such, all functions in SML can only take in <em>one</em> input - though the input type <code>t1</code> may be one that &quot;contains&quot; multiple values. For instance, a function may have type <code>int * int -&gt; bool</code>. For such a function, it takes in only <em>one</em> argument (a tuple containing two integers).</p>
+<h2><a class="header" href="#functions-in-sml" id="functions-in-sml">Functions in SML</a></h2>
+<p>We can declare a function with the <code>fun</code> keyword.</p>
+<pre><code class="language-sml">fun fact (0 : int) : int = 1
+  | fact (n : int) : int = n * fact (n - 1)
+</code></pre>
+<p>The above example serves to initialize a function that computes the factorial function, and then bind it to the identifier <code>fact</code>. Function declarations create a <em>closure</em> which includes all bound variables in the scope of the function when it was declared, so the behavior of <code>fact</code> will always be as if it was in the same environment as when it was first declared. As such, we can also declare functions such as:</p>
+<pre><code class="language-sml">val x = 1
+fun addX (n : int) : int = n + x
+val x = 2
+</code></pre>
+<p>When <code>addX</code> is bound, it is bound in a closure that includes the binding of the value <code>1</code> to the identifier <code>x</code> (we may denote this as <code>[1/x]</code>). As such, even though the body of <code>addX</code> refers to the identifier <code>x</code>, it is not affected by the later re-binding of the value of <code>x</code>, since it only matters what the value of <code>x</code> was when <code>addX</code> was first bound. Seen in this way, then, reasoning about functions which use bound variables is very intuitive - you simply have to look up for the most recent time that that variable was bound.</p>
+<p>We also can use <em>anonymous lambda expressions</em> to bind functions. These are denoted by the <code>fn</code> keyword, and are called lambda expressions for historical reasons having to do with a model of computation called the <em>lambda calculus</em>. For instance, we can declare:</p>
+<pre><code class="language-sml">val addOne : int -&gt; int = fn x =&gt; x + 1
+</code></pre>
+<p>Lambda expressions can also be <em>multi-clausal</em>, by pattern matching to multiple different clauses. For instance, we can define the following function, which simply returns true when given 0 and 1, and false otherwise.</p>
+<pre><code class="language-sml">val isBinary : int -&gt; bool = fn 0 =&gt; true | 1 =&gt; true | _ =&gt; false
+</code></pre>
+<p>Note that the right hand side of this declaration is an expression in its own right, and can be used independently of just being bound. The above binding simply binds the anonymous lambda expression (which simply increments an integer) to the identifier <code>addOne</code>. We could also do the following binding:</p>
+<pre><code class="language-sml">val two : int = (fn x =&gt; x + 1) 1
+</code></pre>
+<p>where we bind the result of evaluating the expression <code>(fn x =&gt; x + 1) 1</code> to the identifier <code>two</code>. Clearly, this expression evaluates to <code>2</code>, as <code>1</code> is substituted in for the local variable <code>x</code>, and then simply summed with <code>1</code>. </p>
+<p><strong>NOTE:</strong> <code>fun</code> and <code>fn</code> differ in that functions declared with <code>fun</code> can be recursive, whereas val bindings using <code>fn</code> <em>cannot</em>. As such, while we can define the function <code>fact</code> as we did above, using <code>fun</code>, the following code <em>does not</em> work:</p>
+<pre><code class="language-sml">(* DOES NOT WORK *)
+val fact : int -&gt; int = fn 0 =&gt; 1 | n =&gt; n * fact (n - 1)
+</code></pre>
+<p>We will explore later on in the course what lambda expressions are useful for. In the meantime, usage of <code>fun</code> is sufficient to declare any functions that you may need.</p>
+<p>It is also important to note that SML is an <em>eager</em> language, or <em>call-by-value</em>. This means that functions evaluate their arguments before stepping into their function bodies. This is explored more in the article on evaluation.</p>
+<h1><a class="header" href="#signatures" id="signatures">Signatures</a></h1>
+<h1><a class="header" href="#list" id="list">List</a></h1>
+<p>Lists are the SML type of ordered collections of objects. Notably, you can create lists of any kind of object, so <code>int list</code>, <code>string list</code>, and <code>bool list</code> are all valid types. <code>list</code> on its own is a type constructor (meaning that it makes new types out of old types), so it is not a valid type by itself, however. Lists are not, however, the same as arrays - they do not have constant-time access to any given index of the list. Indeed, they are best thought of as not analogous to arrays in other languages at all. Instead, you only have access to the elements located at the very beginning of the list, the <em>head</em>. Additionally, lists are more <em>restricted</em> than data structures in some other languages - a given list has a fixed type for its elements. All of the elements in a list must be of the same type. For the purposes of this document, we will discuss only int lists.</p>
+<h2><a class="header" href="#values-4" id="values-4">Values</a></h2>
+<p>We write lists as a sequence of integers, separated by commas, all enclosed with two square brackets. So then we have valid int lists as <code>[1, 2, 3]</code>, <code>[1, 5, 1, 5, 0]</code>, and <code>[]</code>, with the latter representing the empty list. We also refer to the empty list as <em>nil</em> (in addition, you can type <code>nil</code> instead of <code>[]</code> in code). </p>
+<p>The other essential component to lists is what is known as the <code>::</code> operator, referred to as &quot;cons&quot;. Cons can be used as a constructor for any fixed type of list, so we say that for any given type <code>t</code>:</p>
+<pre><code class="language-sml">(op ::) : t * t list -&gt; t list
+</code></pre>
+<p>Cons takes in a value <code>v</code> of type <code>t</code> and <code>t list</code>, and prepends <code>v</code> to the front of the given list. For ints in particular, we have that <code>1 :: [2, 3]</code> steps to <code>[1, 2, 3]</code>. Additionally, cons is <em>right-associative</em>. This means that in a continuous stream of applications of cons, they are evaluated from <em>right-to-left</em>. This means that <code>1 :: 2 :: 3 :: []</code> is implicitly denoting <code>1 :: (2 :: (3 :: []))</code>, as the calls to cons associate to the right. So, similarly to before, a <code>1 :: [2, 3]</code>, <code>[1, 2, 3]</code>, and <code>1 :: 2 :: 3 :: []</code> are exactly equivalent, and denote the same list.</p>
+<p>Cons is also a <em>constructor</em>, meaning that it can be used to pattern match and deconstruct lists. As such, we can write basic functions to compute the length of a list as follows:</p>
+<pre><code class="language-sml">(* length : int list -&gt; int *)
+(* REQUIRES: true *)
+(* ENSURES: length L ==&gt; the length of L *)
+fun length ([] : int list) : int = 0
+  | length (x::xs : int list) : int = 1 + length xs
+</code></pre>
+<p>Given a non-empty list, this function simply binds the first element of the list to the identifier <code>x</code>, discards it, and then recursively calls <code>length</code> to find the length of the remaining list <code>xs</code>, adding 1 to the result.</p>
+<p>The definition of an int list thus corresponds to:</p>
+<pre><code class="language-sml">datatype int list = [] | :: of int * int list
+</code></pre>
+<p>where an int list can either be the empty list <code>[]</code>, or it can be <code>::</code> of a first element and the rest of the list (where <code>::</code> is an infix operator, so instead of being written as <code>::(x, xs)</code>, we have <code>x :: xs</code>). Note that this is not actually valid syntax, but you can think of the definition of int lists in this way.</p>
+<h2><a class="header" href="#motivation" id="motivation">Motivation</a></h2>
+<p>Compared to other data structures, lists seem to have numerous disadvantages. As mentioned previously, they do not possess constant-time indexing like arrays in other languages - there is no way to instantly get the ith element of a list easily. Instead, you must &quot;cons off&quot; all the elements in front of that item in order to retrieve it - if you want to remove that item from the list, then you have to put the preceding elements <em>back</em> as well (and in the right order!). Lists are also inherently sequential - you cannot access multiple elements at one time. </p>
+<p>The reason why we choose lists is that they have very nice mathematical properties. These &quot;disadvantages&quot; in the previous paragraph become strengths, when viewed in a certain manner. Lists are powerful for their simple, inductive definition (as shown in the previous section), which is sufficiently powerful to characterize many important principles in this class. Additionally, they are <em>persistent</em>, meaning that they cannot be mutated - any change to a list simply creates a new one instead, which is a very desirable property to have in functional programs. Though the interfacing behavior with these lists is limited, we will write programs where this limitation matters less. Our hope is that, throughout this course, you can begin to see that there is an elegance in simplicity.</p>
+<blockquote>
+<p><strong>[Case Study: Sorted Lists]</strong></p>
+<p>Sorting is an important principle in computer science. Whether it's binary search trees or cataloguing data, sorting is a very prevalent concept when it comes to making algorithms more efficient. It's not always the most easy to reason about, however - how would you be able to formally prove that a sorting algorithm works? In this regard, lists turn out to have some very nice properties.</p>
+<blockquote>
+<p><strong>Definition : Sorted Int Lists</strong></p>
+<ol>
+<li><code>[] : int list</code> is sorted.</li>
+<li>The singleton int list is sorted.</li>
+<li>If <code>L : int list</code> is sorted, then if <code>x : int</code> is less than or equal to the first element of <code>L</code>, then <code>x :: L</code> is sorted.</li>
+</ol>
+</blockquote>
+<p>This definition is naturally inductive, and follows very easily from the definition of sorting. In addition, it goes hand-in-hand with how we define lists - building them up from smaller parts one-by-one. Seen in this way, reasoning about and proving whether a list is sorted becomes very easy.</p>
+</blockquote>
+<h2><a class="header" href="#combination-4" id="combination-4">Combination</a></h2>
+<p>We have seen that cons is essential for constructing lists, and for deconstructing the constituent elements that comprise a given list. What about when dealing with multiple lists? We might want to <em>combine</em> the elements from several lists at once. A standard function for doing so is called the <code>@</code> operator, or &quot;append&quot;.</p>
+<pre><code class="language-sml">infix @
+fun ([] : int list) @ (R : int list) : int list = R
+  | (l::ls : int list) @ (R : int list) : int list = l :: (ls @ R)
+</code></pre>
+<p>(Note that this is valid syntax to declare an infix function <code>@</code>, it just looks a little different than what we've seen thus far. In this case, we put the function name <em>between</em> the arguments).</p>
+<p>This function essentially just takes off all the elements from the left list, then begins to add them back onto the right list. It is also infix, which means that the result of <code>[1, 2] @ [3, 4]</code> is <code>[1, 2, 3, 4]</code>, and in the function's code, <code>ls @ R</code> just means the resulting list from appending <code>ls</code> to <code>R</code>.</p>
+<h2><a class="header" href="#questions-to-consider-1" id="questions-to-consider-1">Questions to Consider</a></h2>
+<ol>
+<li>
+<p>In the code above, why does <code>@</code> not reverse the left list?</p>
+</li>
+<li>
+<p>How might you inductively define a list whose elements all satisfy some property <em>P</em>?</p>
+</li>
+<li>
+<p>Write an SML function that reverses a list. </p>
+</li>
+</ol>
+<h1><a class="header" href="#dictionaries" id="dictionaries">Dictionaries</a></h1>
+<h1><a class="header" href="#regular-expressions" id="regular-expressions">Regular Expressions</a></h1>
+<h1><a class="header" href="#sequences" id="sequences">sequences</a></h1>
+<h1><a class="header" href="#debugging" id="debugging">Debugging</a></h1>
+<h1><a class="header" href="#common-errors" id="common-errors">Common Errors</a></h1>
+<h1><a class="header" href="#debugging-hints-and-strategies" id="debugging-hints-and-strategies">Debugging Hints and Strategies</a></h1>
+<h1><a class="header" href="#concepts" id="concepts">Concepts</a></h1>
+<h1><a class="header" href="#basics" id="basics">Basics</a></h1>
+<p>Standard ML is a <em>functional</em> programming language, meaning that we eschew the use of <em>side effects</em> and <em>state changes</em> to obtain programs that are easy to reason about, analogous to reasoning about mathematical expressions. Similarly to mathematics, we perform operations and view computation as a process of <em>simplification</em> (or <em>reduction</em>, as we will more commonly name it). Seen in this way, computation becomes an elaborate series of expression evaluations, and it is this concept that will permeate the course. In these notes, we will go further in detail about the basic concepts of SML.</p>
+<h1><a class="header" href="#evaluation" id="evaluation">Evaluation</a></h1>
+<p>Evaluation is a commonplace idea. No matter what programming language you are in, it is a customary concept to invoke subroutines in order to obtain some kind of <em>final result</em>, which can be further used in order to achieve some later goal. To obtain such a result, however, programs must perform certain computations and carry out certain steps - in other words, they must <em>evaluate</em>. Ultimately, programs are complicated constructs whose main goal is to compute some value or achieve some effect - we will focus mainly on the first case here. </p>
+<h2><a class="header" href="#expressions-and-values" id="expressions-and-values">Expressions and Values</a></h2>
+<p>Expressions in Standard ML are akin to mathematical expressions. They are built up from applications of certain operations, being subject to certain simplification rules that can be used to obtain a final answer. For instance, we would consider <code>2 + 2</code> an expression, similarly to other examples such as <code>1 div 0</code> and <code>Int.toString 2</code>.</p>
+<p>The most fundamental building blocks in Standard ML are <em>values</em>. Values are the primordial units of a given type, being irreducible to any further simplified form. When trying to answer some computational problem, it is usually the case that we are looking for some kind of &quot;answer&quot;. As such, values are important to obtain, as we are usually looking for some kind of answer in &quot;simplest terms&quot;. Values in SML emcompass examples such as <code>2</code>, <code>true</code>, <code>&quot;foo&quot;</code>, <code>[1, 2, 3]</code> and <code>fn x =&gt; x + 1</code>.</p>
+<blockquote>
+<p><strong>[Value]</strong> A value is an expression <code>e</code> such that, for all <code>e'</code> such that <code>e ==&gt; e'</code>, <code>e' = e</code>. In other words, a value is an expression that only reduces to itself - there is no pending computation left to be done.</p>
+</blockquote>
+<p><strong>Note:</strong> The meaning of <code>==&gt;</code> in the above definition is <em>reduction</em>, which is further explained below. </p>
+<p>A noteworthy distinction to make is that certain language constructs, such as an if-then-else expression, let-in-end expression, or case expression, are in fact <em>expressions</em>. This means that they can be passed around and evaluated just like any other expression. So for instance, the following code is a valid expression:</p>
+<pre><code class="language-sml">(let
+    val x = 5
+in 
+    x
+end) + 2
+</code></pre>
+<p>and has the value of <code>7</code>. Similarly, the following code is also an expression:</p>
+<pre><code class="language-sml">(if true then 15 else 150) * 2
+</code></pre>
+<p>and has a value of <code>30</code>. </p>
+<h2><a class="header" href="#reduction" id="reduction">Reduction</a></h2>
+<p>We now define a notion of <em>reduction</em>, which corresponds to our notion of simplification. We write that <code>e ==&gt; e'</code> if the expression <code>e</code> <em>reduces to</em> the expression <code>e'</code>, which means that <code>e</code> produces <code>e'</code> from zero or more applications of some simplifying rule. For instance, we may say that <code>2 + 2 ==&gt; 4</code>, since by applying the function <code>(op +)</code>, we obtain <code>4</code>. Furthermore, we may say that <code>if true then &quot;good&quot; else &quot;bad&quot; ==&gt; &quot;good&quot;</code> by evaluation of the if-then-else expression, since the predicate (in this case <code>true</code>) is true.</p>
+<blockquote>
+<p><strong>[Valuable]</strong> An expression <code>e</code> is <em>valuable</em> if there exists a value <code>v</code> such that <code>e ==&gt; v</code>. Note that all values are by definition valuable.</p>
+</blockquote>
+<p>So valuable expressions include <code>2 + 2</code>, <code>4</code>, and <code>if true then 4 else 2</code> (and in fact all reduce to the same value!). An example of a <em>non</em>-valuable expression is <code>1 div 0</code>, which raises an exception <code>Div</code> when evaluated (since division by zero is undefined). Additionally, if we consider the following code fragment:</p>
+<pre><code class="language-sml">fun loop (x : int) : int = loop x
+</code></pre>
+<p>This defines a function <code>loop : int -&gt; int</code> that loops forever, since it continuously calls itself forever. Thus, <code>loop x</code> for any <code>x : int</code> is also a non-valuable expression, since it never reduces down to a value. </p>
+<p>In fact, what we will see is that this behavior is sufficient to characterize <em>all</em> well-typed expressions. We summarize it in the following:</p>
+<blockquote>
+<p><strong>[Behavior of Well-Typed Expressions]</strong> For any well-typed expression <code>e</code>, it either:</p>
+<ol>
+<li>
+<p>Reduces to a value</p>
+</li>
+<li>
+<p>Loops forever</p>
+</li>
+<li>
+<p>Raises an exception</p>
+</li>
+</ol>
+</blockquote>
+<h2><a class="header" href="#eager-evaluation" id="eager-evaluation">Eager Evaluation</a></h2>
+<p>SML is an <em>eagerly evaluated</em> language, or <em>call-by-value</em>. This stands opposed to other paradigms such as <em>lazy</em> evaluation, or <em>call-by-need</em>, which is exhibited in languages such as Haskell. In a call-by-value language, we evaluate arguments of functions even if we may not need them. While this arguably may be &quot;wasteful&quot; in some cases, we will find that this greatly simplifies work/span analysis, among other benefits.</p>
+<blockquote>
+<p><strong>[Eager Evaluation]</strong> In an eagerly evaluated language, arguments of functions are evaluated <em>before</em> stepping into the body of a function. For a function <code>f</code> and valuable expression <code>e</code>, when evaluating the expression <code>f e</code>, first <code>e</code> is evaluated to obtain the value <code>v</code> such that <code>e ==&gt; v</code>, then <code>f v</code> is evaluated.</p>
+</blockquote>
+<p>As an example of this, consider the function <code>fn x =&gt; x + 1</code>. If we were to try and evaluate <code>(fn x =&gt; x + 1) (2 * 3)</code>, first we would need to evaluate the function's arguments, that being <code>2 * 3</code>. As such, this entire expression would reduce to <code>(fn x =&gt; x + 1) 6</code>, which is <code>7</code>.</p>
+<p>In an example like the previous one, it doesn't particularly matter where we evaluated <code>2 * 3</code> - we would have gotten the same result either way. This is not always the case. Consider the expression <code>(fn x =&gt; 2) (1 div 0)</code>. By eager evaluation, we should evaluate the argument first, which means that this entire expression should raise an exception. Raising an exception thus happens <em>before we even look at the body of the function</em>. For all intents and purposes, the body of the function does not exist to us until we actually enter it - which necessitates that the argument to the function is valuable. It is a black box that is &quot;locked&quot; behind the argument. </p>
+<h2><a class="header" href="#totality" id="totality">Totality</a></h2>
+<p>Oftentimes, we will write proofs demonstrating the extensional equivalence of two expressions (extensional equivalence being a topic that will be covered more in-depth in the next article). In order to do so, we often will have to expand definitions, stepping through function bodies and applying lemmas. In doing so, we will frequently need to do a <em>totality citation</em>, to justify that making such steps is truly valid. While the name may seem unfamiliar, it ultimately belies a concept that you already know - valuability.</p>
+<blockquote>
+<p><strong>[Total]</strong> We say that a function <code>f : t1 -&gt; t2</code> for some types <code>t1</code> and <code>t2</code> is <em>total</em> if for all valuable expressions <code>x : t1</code>, <code>f x</code> is valuable. In other words, for all valuable inputs to <code>f</code>, we get a valuable output.</p>
+</blockquote>
+<p>Examples of total functions include <code>fn x =&gt; x + 1</code>, <code>fn x =&gt; &quot;foo&quot;</code>, and the length function for lists. Notably, however, the factorial function is <em>not</em> total:</p>
+<pre><code class="language-sml">fun fact (0 : int) : int = 1
+  | fact (n : int) : int = n * fact (n - 1)
+</code></pre>
+<p>This function is not total because, while <code>fact n</code> is valuable for all non-negative <code>n</code>, <code>fact n</code> for a negative <code>n</code> loops forever, as it decrements infinitely, never finding a base case. Thus, <code>fact</code> is not total. Sometimes if a function is valuable only on certain inputs, then we will say that a function is &quot;total over&quot; some domain, even if it is not total in general. We may say that <code>fact</code> is thus total over the non-negative integers, though this is not a common practice.</p>
+<p>We will now digress slightly to consider an example. What can we say of the behavior of a function <code>fn x =&gt; 15150</code>? Well, we can characterize its behavior in words - it returns <code>15150</code> on all inputs. We must be careful when linking our intuition regarding this function to the actual evaluational semantics of SML - however. Consider the expression <code>(fn x =&gt; 15150) (1 div 0)</code>. If we went along with our previous conclusion, we might say that this is <code>15150</code>. This contradicts what we learned in the previous section, however. Since SML is eagerly evaluated, this expression should raise an exception and never reach the function body at all. </p>
+<p>This is an easy mistake to catch when considering an explicit, definite input like <code>1 div 0</code>, but oftentimes we will be considering inputs that might be &quot;unspecified&quot; in some sense. They may be the result of computations that we are not fully convinced of, which could return an expression with any kind of behavior. Suppose we were wondering the behavior of <code>(fn x =&gt; 15150) (f y)</code>, for some function <code>f</code> and value <code>y</code>. Now, we aren't sure at all if this expression does what we think it might do, which is return <code>15150</code> - that depends entirely on the definition of <code>f</code> and the value of <code>y</code>.</p>
+<p>This is where totality comes in. Totality is oftentimes like a sledgehammer, being far more brutish and exhaustive than its use cases necessitate. It is undeniably useful, however. With totality, we do not have to reason about the behavior of a function on any specific inputs - we can just handwave them all and say that no matter what, it must return a valuable output, which is what we really care about. If we revisit the expression <code>(fn x =&gt; 15150) (f y)</code> with the totality of <code>f</code> in hand, now reasoning about it is very simple. We know that <code>y</code> is a value, and that <code>f</code> is total, so by definition <code>f y</code> is valuable. This means that, regardless of what value <code>f y</code> <em>actually</em> evaluates to, we can step into the body of <code>(fn x =&gt; 15150)</code>, and thus conclude that the expression reduces to <code>15150</code>.</p>
+<p>More generally, suppose we have the following definition:</p>
+<pre><code class="language-sml">fun f (x : int) : int = e
+</code></pre>
+<p>where <code>e</code> denotes some expression that we will leave unspecified for the moment. Thus, <code>f</code> is a function that takes in some input of type <code>int</code>, and produces a val binding to bind it to the identifier <code>x</code>, and then evaluates the expression of <code>e</code> in the scope of that binding. Note that such a binding is truly a <em>val</em> binding - since we have eager evaluation, the input must first be evaluated to a value, and then bound to the identifier <code>x</code>.</p>
+<p>Then, consider the expression <code>f (g y)</code>, where <code>g</code> is some other function and <code>y</code> is some value. Oftentimes, we would like to just step through the definition of <code>f</code> in some proof, and say that <code>f (g y)</code> reduces to the expression <code>e</code> in the scope of the binding <code>[(g y)/x]</code> (recall that this is our notation for &quot;binding the value of <code>g y </code> to the identifier <code>x</code>). This is not always possible in general, however. Recall that a well-typed expression either reduces to a value, loops forever, or raises an exception. If <code>g y</code> were to loop forever, would we be able to enter the function body of <code>f</code>, and evaluate <code>e</code>? </p>
+<p>Of course we would not - this is just another consequence of eager evaluation. Evaluation of <code>f (g y)</code> would get &quot;stopped at the door&quot;, so to speak. We would not be able to enter <code>f</code> because <code>g y</code> does not reduce to a value. Since the input to <code>g</code> is arbitrary, in this case, to be able to claim that <code>f (g y)</code> enters the function body of <code>f</code> requires that we know the totality of <code>g</code>. We thus use totality as a <em>tool</em> to get at what is really important - the valuability of the arguments to <code>f</code>, which in this case is <code>g y</code>. As such, while we may refer to such citations as &quot;totality citations&quot;, and name this idea of totality, do not forget that this is all just a consequence of eager evaluation. We are really looking for <em>valuability of arguments</em>.</p>
+<h2><a class="header" href="#conclusions" id="conclusions">Conclusions</a></h2>
+<p>In this section, we explored the idea of computation as evaluation, and how we can interpret SML code as being centered around expressions and values, interspersed between applications of simplifying rules. We learned about SML's usage of eager evaluation and how it affects the assumptions that we can make about the way that code reduces. Additionally, we explored the idea of totality, a direct corollary of our eager evaluation model, which we can use as a tool to justify certain steps that we make during extensional equivalence proofs. Totality (as well as SML's evaluational semantics in general) will be a recurring theme throughout this course, so it will be crucial to understand.</p>
+<h1><a class="header" href="#extensional-equivalence" id="extensional-equivalence">Extensional Equivalence</a></h1>
+<h1><a class="header" href="#recursion-and-induction" id="recursion-and-induction">Recursion and Induction</a></h1>
+<h1><a class="header" href="#tail-recursion" id="tail-recursion">Tail Recursion</a></h1>
+<h1><a class="header" href="#higher-order-functions" id="higher-order-functions">Higher Order Functions</a></h1>
+<h1><a class="header" href="#currying-and-partial-evaluation" id="currying-and-partial-evaluation">Currying and Partial Evaluation</a></h1>
+<h1><a class="header" href="#control-flow" id="control-flow">Control Flow</a></h1>
+<h1><a class="header" href="#continuation-passing-style-definition--basics" id="continuation-passing-style-definition--basics">Continuation Passing Style (Definition &amp; Basics)</a></h1>
+<h1><a class="header" href="#modules" id="modules">Modules</a></h1>
+<h1><a class="header" href="#transparent-and-opaque-ascription" id="transparent-and-opaque-ascription">Transparent and Opaque Ascription</a></h1>
+<h1><a class="header" href="#applications" id="applications">Applications</a></h1>
+<h1><a class="header" href="#cost-graphs" id="cost-graphs">Cost Graphs</a></h1>
+<h1><a class="header" href="#examples" id="examples">Examples</a></h1>
+<h1><a class="header" href="#sml-basics-examples" id="sml-basics-examples">SML Basics Examples</a></h1>
+<h1><a class="header" href="#recursion--induction" id="recursion--induction">Recursion &amp; Induction</a></h1>
+<h1><a class="header" href="#about" id="about">About</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
